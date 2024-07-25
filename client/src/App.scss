@@ -1,0 +1,75 @@
+@use './common';
+
+$transition-time: 250ms;
+
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: common.$text-color;
+
+  .ContentPortal {
+    width: 95%;
+    max-width: 1100px;
+    padding: 20px 0 0 0;
+
+    .fade-enter {
+      opacity: 0;
+    }
+
+    .fade-enter-active {
+      opacity: 1;
+      transition: opacity $transition-time ease-in;
+    }
+
+    .fade-exit {
+      opacity: 1;
+    }
+
+    .fade-exit-active {
+      opacity: 0;
+      transition: opacity $transition-time ease-out;
+    }
+
+    .Content > * {
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+    }
+
+    .Loading {
+      display: flex;
+      flex-direction: row;
+      margin: auto;
+    }
+  }
+
+  .NavBar {
+    width: 100%;
+    border-bottom: 1px solid common.$text-color;
+
+    .NavLink {
+      color: common.$text-color;
+      text-decoration: none;
+
+      &:hover {
+        color: common.$link-color;
+      }
+    }
+
+    ul {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      list-style: none;
+
+      & > li {
+        margin: 0 40px 0 0;
+
+        
+      }
+    }
+  }
+}
